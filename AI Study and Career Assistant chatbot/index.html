@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study & Career Assistant</title>
+    <meta name="description" content="A polished AI-powered study and career assistant chat experience.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="chat-container" aria-label="AI Study and Career Assistant">
+        <header class="chat-header">
+            <div class="brand">
+                <span class="brand-mark">AI</span>
+                <div>
+                    <h1>Career Assistant</h1>
+                    <p>Study guidance and job preparation made simple.</p>
+                </div>
+            </div>
+            <div class="suggestions" aria-label="Suggested questions">
+                <p class="suggestion-title">Try asking:</p>
+                <div class="suggestion-list">
+                    <button type="button" class="suggestion-button">How can I build a standout portfolio?</button>
+                    <button type="button" class="suggestion-button">What skills should I learn for web development?</button>
+                    <button type="button" class="suggestion-button">Suggest project ideas for my portfolio.</button>
+                    <button type="button" class="suggestion-button">How can I improve my resume?</button>
+                    <button type="button" class="suggestion-button">What study plan should I follow?</button>
+                    <button type="button" class="suggestion-button">How do I choose the right career path?</button>
+                    <button type="button" class="suggestion-button">What is the best way to learn programming fast?</button>
+                    <button type="button" class="suggestion-button">How do I prepare for technical interviews?</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="chat-box" id="chatBox" aria-live="polite" aria-atomic="false">
+            <div class="bot-message">
+                <p>Welcome! Ask me about study plans, career paths, internships, or project ideas.</p>
+            </div>
+        </section>
+
+        <form id="chatForm" class="input-area">
+            <label for="userInput" class="sr-only">Type your message</label>
+            <input id="userInput" name="userInput" type="text" autocomplete="off" placeholder="Type a question..." aria-label="Type a question">
+            <button type="submit">Send</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
