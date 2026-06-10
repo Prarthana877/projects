@@ -1,4 +1,4 @@
-// toggle menu button 
+// Toggle the menu icon and expand/collapse the navigation links.
 function toggleMenu(){
     const menu=document.querySelector(".menu");
     const nav = document.querySelector(".nav");
@@ -6,14 +6,14 @@ function toggleMenu(){
     nav.classList.toggle("active");
 } 
 
-// change the background 
+// Change the active background video, trailer preview, and model title.
 function changeVideo(name){
+    // Collect the elements that share matching McLaren model classes.
     const bgVideoList=document.querySelectorAll(".bg-video");
     const trailers=document.querySelectorAll(".trailer");
     const models=document.querySelectorAll(".model");
 
-    // js higher order array function forEach
-    // this is easier to do data mapping.
+    // Show only the background video that matches the selected model.
     bgVideoList.forEach(video=>{
         video.classList.remove("active");
         if(video.classList.contains(name)){
@@ -21,7 +21,7 @@ function changeVideo(name){
         }
     })
 
-    // mapping model name change
+    // Show only the model heading that matches the selected model.
     models.forEach(models=>{
         models.classList.remove("active");
         if(models.classList.contains(name)){
@@ -29,7 +29,7 @@ function changeVideo(name){
         }
     })
 
-    // mapping trailer video change
+    // Show only the trailer video that matches the selected model.
     trailers.forEach(video=>{
         trailers.classList.remove("active");
         if(trailers.classList.contains(name)){
