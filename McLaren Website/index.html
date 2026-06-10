@@ -10,13 +10,16 @@
 
 </head>
 <body>
+    <!-- Top bar with model years, brand logo, and menu trigger -->
     <header>
         <span class="year">2018-2025</span>
         <a href="/" class="logo"><img src="1.logo.png" alt="logo"></a>
         <a href="#" class="menu" onclick="toggleMenu()"></a>
     </header>
 
+    <!-- Main navigation overlay and page content -->
     <div class="navigation">
+        <!-- Vehicle category links -->
         <ul class="nav">
             <li><a href="#">Supercars</a></li>
             <li><a href="#">GT</a></li>
@@ -24,6 +27,8 @@
             <li><a href="#">Solus GT</a></li>
             <li><a href="#">Legacy</a></li>
         </ul>
+
+        <!-- Full-screen background videos matched to each McLaren model -->
         <div class="bg-video-list">
             <video 
             class="bg-video mclaren-1 active" 
@@ -61,6 +66,7 @@
             muted></video>
         </div>
 
+        <!-- Hero text and model names updated by the carousel selection -->
         <div class="content">
             <h1>McLAREN</h1>
             <h3 class="model mclaren-1 active">765SLT SPIDER</h3>
@@ -74,14 +80,12 @@
             <a href="#">Enquire now</a>
         </div>
 
+        <!-- Angled preview screen with trailer/model videos -->
         <div class="screen">
             <div class="shadow"></div>
             <div>
                 <span style="--i:0">
-                    <!-- Insert the screen video -->
-                    <!-- video data mapping -->
-                    <!-- match the video name with the class name -->
-
+                    <!-- Main preview videos use matching model classes for switching -->
                     <video class="trailer mclaren-1 screen-video active"
                         src="./videos/mclaren-1.mp4"
                         autoplay
@@ -89,7 +93,6 @@
                         muted>
                     </video>
 
-                    <!-- Insert the screen video -->
                     <video class="trailer mclaren-2 screen-video active"
                     src="./videos/mclaren-2.mp4"
                         autoplay
@@ -97,7 +100,6 @@
                         muted>
                     </video>
 
-                    <!-- Insert the screen video -->
                     <video class="trailer mclaren-3 screen-video active"
                     src="./videos/mclaren-3.mp4"
                         autoplay
@@ -106,7 +108,6 @@
                         
                     </video>
 
-                    <!-- Insert the screen video -->
                     <video class="trailer mclaren-4 screen-video active"
                     src="./videos/mclaren-4.mp4"
                         autoplay
@@ -114,7 +115,6 @@
                         muted>
                     </video>
 
-                    <!-- Insert the screen video -->
                     <video class="trailer mclaren-5 screen-video active"
                     src="./videos/mclaren-5.mp4"
                         autoplay
@@ -123,7 +123,7 @@
                     </video>
                 </span>
                 <span style="--i:1">
-                    <!-- Insert the screen video -->
+                    <!-- Supporting trailer clip -->
                     <video class="screen-video"
                     src="./videos/trailer-1.mp4"
                         autoplay
@@ -132,7 +132,7 @@
                     </video>
                 </span>
                 <span style="--i:2">
-                    <!-- Insert the screen video -->
+                    <!-- Supporting trailer clip -->
                     <video class="screen-video"
                     src="./videos/trailer-2.mp4"
                         autoplay
@@ -141,7 +141,7 @@
                     </video>
                 </span>
                 <span style="--i:3">
-                    <!-- Insert the screen video -->
+                    <!-- Supporting trailer clip -->
                     <video class="screen-video"
                     src="./videos/trailer-3.mp4"
                     autoplay
@@ -152,6 +152,8 @@
                 </span>
             </div>
         </div>
+
+        <!-- Image carousel used to select the active McLaren model -->
         <div class="gallery">
             <div class="carousel">
                 <a class="carousel-item" href="#" onclick="changeVideo('mclaren-1');">
@@ -178,6 +180,7 @@
         </div>
     </div>
 
+    <!-- Social media links -->
     <ul class="socials">
         <li><a href="#">
             <i class="bi bi-facebook"></i>
@@ -190,11 +193,12 @@
         </a></i></li>
     </ul>
 
-    
+    <!-- External libraries and local page scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
     <script type="text/javascript">
+    // Initialize the Materialize carousel after the page loads.
     $(document).ready(function(){
     $('.carousel').carousel();
     });
