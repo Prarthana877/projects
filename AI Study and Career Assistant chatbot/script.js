@@ -1,10 +1,13 @@
+// Connect to the main chat elements in the HTML.
 const chatBox = document.getElementById('chatBox');
 const chatForm = document.getElementById('chatForm');
 const userInput = document.getElementById('userInput');
 const suggestionButtons = document.querySelectorAll('.suggestion-button');
 
+// Backend endpoint that returns AI chat replies.
 const API_ENDPOINT = 'http://localhost:3000/api/chat';
 
+// Let users click a suggested question and submit it like typed input.
 suggestionButtons.forEach(button => {
     button.addEventListener('click', () => {
         userInput.value = button.textContent;
@@ -16,6 +19,7 @@ suggestionButtons.forEach(button => {
     });
 });
 
+// Handle user-submitted messages and show the bot response.
 chatForm.addEventListener('submit', async event => {
     event.preventDefault();
     const message = userInput.value.trim();
@@ -38,6 +42,7 @@ chatForm.addEventListener('submit', async event => {
     }
 });
 
+// Send the user message to the local Node/Express API.
 async function sendMessageToApi(message) {
     const response = await fetch(API_ENDPOINT, {
         method: 'POST',
@@ -55,6 +60,7 @@ async function sendMessageToApi(message) {
     return data.reply || data.message || 'Sorry, no answer was returned.';
 }
 
+// Add a chat bubble to the conversation window.
 function appendMessage(text, className) {
     const messageElement = document.createElement('div');
     messageElement.className = `message ${className}`;
@@ -63,6 +69,7 @@ function appendMessage(text, className) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+// Show a temporary bot message while the API request is loading.
 function appendLoadingMessage() {
     const loadingElement = document.createElement('div');
     loadingElement.className = 'message bot-message loading-message';
@@ -72,6 +79,7 @@ function appendLoadingMessage() {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+// Replace the temporary loading message with the final bot reply.
 function replaceLoadingMessage(text) {
     const loadingMessage = chatBox.querySelector('[data-loading="true"]');
     if (loadingMessage) {
@@ -82,6 +90,7 @@ function replaceLoadingMessage(text) {
     }
 }
 
+// Offline fallback replies used when the API request fails.
 function getBotResponse(message) {
     const normalized = message.toLowerCase();
 

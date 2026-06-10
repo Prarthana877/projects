@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Main chatbot layout container -->
     <main class="chat-container" aria-label="AI Study and Career Assistant">
+        <!-- Header area with app branding and quick-start prompts -->
         <header class="chat-header">
             <div class="brand">
                 <span class="brand-mark">AI</span>
@@ -17,6 +19,8 @@
                     <p>Study guidance and job preparation made simple.</p>
                 </div>
             </div>
+
+            <!-- Suggested questions users can click to start a conversation -->
             <div class="suggestions" aria-label="Suggested questions">
                 <p class="suggestion-title">Try asking:</p>
                 <div class="suggestion-list">
@@ -32,12 +36,14 @@
             </div>
         </header>
 
+        <!-- Chat messages appear here as the user and assistant respond -->
         <section class="chat-box" id="chatBox" aria-live="polite" aria-atomic="false">
             <div class="bot-message">
                 <p>Welcome! Ask me about study plans, career paths, internships, or project ideas.</p>
             </div>
         </section>
 
+        <!-- Message input form for sending new questions -->
         <form id="chatForm" class="input-area">
             <label for="userInput" class="sr-only">Type your message</label>
             <input id="userInput" name="userInput" type="text" autocomplete="off" placeholder="Type a question..." aria-label="Type a question">
@@ -45,6 +51,7 @@
         </form>
     </main>
 
+    <!-- Local JavaScript handles chat messages and suggestion button clicks -->
     <script src="script.js"></script>
 </body>
 </html>

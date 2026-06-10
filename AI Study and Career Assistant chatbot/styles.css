@@ -1,7 +1,9 @@
+/* Use border-box sizing so padding and borders are easier to control. */
 * {
     box-sizing: border-box;
 }
 
+/* Global theme values for the page. */
 :root {
     color-scheme: light;
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -10,11 +12,13 @@
     color: #1f2937;
 }
 
+/* Reset default page spacing. */
 html, body {
     margin: 0;
     min-height: 100%;
 }
 
+/* Center the chat app on the page. */
 body {
     display: flex;
     align-items: center;
@@ -23,6 +27,7 @@ body {
     background: linear-gradient(180deg, #eef2ff 0%, #ffffff 55%);
 }
 
+/* Main card that contains the full chatbot interface. */
 .chat-container {
     width: min(100%, 840px);
     max-width: 880px;
@@ -33,18 +38,21 @@ body {
     border: 1px solid rgba(99, 102, 241, 0.12);
 }
 
+/* Header section with app identity and suggested prompts. */
 .chat-header {
     padding: 24px 24px 18px;
     background: linear-gradient(135deg, #5b5bf7, #7c70ff);
     color: white;
 }
 
+/* Brand row with the AI badge and title text. */
 .brand {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
+/* Suggested prompt chips shown under the header. */
 .suggestions {
     margin-top: 20px;
 }
@@ -55,12 +63,14 @@ body {
     font-size: 0.95rem;
 }
 
+/* Wrap suggestion buttons across multiple rows when needed. */
 .suggestion-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
+/* Clickable prompt chip styling. */
 .suggestion-button {
     padding: 10px 14px;
     border: 1px solid rgba(255, 255, 255, 0.22);
@@ -78,6 +88,7 @@ body {
     transform: translateY(-1px);
 }
 
+/* Square AI badge beside the heading. */
 .brand-mark {
     width: 48px;
     height: 48px;
@@ -102,6 +113,7 @@ body {
     line-height: 1.5;
 }
 
+/* Scrollable message area. */
 .chat-box {
     height: 620px;
     overflow-y: auto;
@@ -112,6 +124,7 @@ body {
     background: #f8faff;
 }
 
+/* Custom scrollbar for the chat history. */
 .chat-box::-webkit-scrollbar {
     width: 8px;
 }
@@ -125,6 +138,7 @@ body {
     border-radius: 999px;
 }
 
+/* Shared styling for every chat bubble. */
 .message {
     max-width: 82%;
     padding: 16px;
@@ -134,6 +148,7 @@ body {
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
 }
 
+/* Assistant messages align to the left. */
 .bot-message {
     background: #ffffff;
     border: 1px solid rgba(148, 163, 184, 0.2);
@@ -141,6 +156,7 @@ body {
     align-self: flex-start;
 }
 
+/* User messages align to the right. */
 .user-message {
     background: #5b5bf7;
     color: white;
@@ -148,6 +164,7 @@ body {
     border-bottom-right-radius: 4px;
 }
 
+/* Input row below the chat history. */
 .input-area {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -157,6 +174,7 @@ body {
     border-top: 1px solid rgba(15, 23, 42, 0.06);
 }
 
+/* Text field for user questions. */
 .input-area input {
     width: 100%;
     padding: 16px 18px;
@@ -172,6 +190,7 @@ body {
     box-shadow: 0 0 0 4px rgba(91, 91, 247, 0.12);
 }
 
+/* Send button styling. */
 .input-area button {
     padding: 0 24px;
     border: none;
@@ -189,6 +208,7 @@ body {
     transform: translateY(-1px);
 }
 
+/* Keep labels available for screen readers while hiding them visually. */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -201,12 +221,14 @@ body {
     border: 0;
 }
 
+/* Slightly narrow the app on medium-sized screens. */
 @media (max-width: 920px) {
     .chat-container {
         width: min(100%, 760px);
     }
 }
 
+/* Mobile layout adjustments. */
 @media (max-width: 680px) {
     body {
         padding: 16px;
